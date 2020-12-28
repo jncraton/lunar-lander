@@ -3,6 +3,8 @@ Lunar Lander
 
 Scaffold for [Lunar Lander](http://gym.openai.com/envs/LunarLander-v2/) agent.
 
+![Lander animation](https://raw.githubusercontent.com/plopd/deep-reinforcement-learning/master/dqn/results/trained_agent.gif)
+
 Installation
 ------------
 
