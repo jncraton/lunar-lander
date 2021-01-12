@@ -9,7 +9,12 @@ Installation
 ------------
 
 - Clone this repository
-- `pip3 install gym box2d-py`
+- `pip3 install --upgrade -r requirements.txt`
+
+Running
+-------
+
+`python3 lander.py`
 
 More Information
 ----------------
