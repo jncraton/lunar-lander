@@ -1,2 +1,2 @@
 gym
-box2d-py
+box2d
