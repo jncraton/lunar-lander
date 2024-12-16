@@ -1,2 +1,2 @@
-gym
+gymnasium
 box2d

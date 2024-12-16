@@ -1,4 +1,4 @@
-import gym
+import gymnasium as gym
 
 NOP = 0
 LEFT_ENGINE = 1
@@ -7,11 +7,7 @@ RIGHT_ENGINE = 3
 
 
 def get_agent_action(observations):
-    x = observations[0]
-    y = observations[1]
-    x_speed = observations[2]
-    y_speed = observations[3]
-    angle = observations[4]
+    x, y, x_speed, y_speed, angle = observations[:5]
 
     # Fire main engine to keep from crashing
     if y_speed < -0.1 and -0.5 < angle < 0.5:
@@ -34,12 +30,13 @@ def get_agent_action(observations):
 
 
 def run_graphical():
-    with gym.make("LunarLander-v2") as env:
+    with gym.make("LunarLander-v3", render_mode="human") as env:
         total_reward = 0.0
-        observations = env.reset()
+        observations, info = env.reset()
         while True:
             action = get_agent_action(observations)
-            observations, reward, done, info = env.step(action)
+            observations, reward, terminated, truncated, info = env.step(action)
+            done = terminated or truncated
             total_reward += reward
 
             if env.render() == False:
@@ -51,15 +48,16 @@ def run_graphical():
 
 
 def get_average_reward(num_runs=20):
-    with gym.make("LunarLander-v2") as env:
+    with gym.make("LunarLander-v3") as env:
         print(f"Calculating average performance over {num_runs} runs")
         avg_reward = 0.0
         for i in range(num_runs):
-            observations = env.reset()
+            observations, info = env.reset()
             total_reward = 0.0
             while True:
                 action = get_agent_action(observations)
-                observations, reward, done, info = env.step(action)
+                observations, reward, terminated, truncated, info = env.step(action)
+                done = terminated or truncated
                 total_reward += reward
 
                 if done:
