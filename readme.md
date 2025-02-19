@@ -1,9 +1,9 @@
 Lunar Lander
 ============
 
-Scaffold for [Lunar Lander](https://gymnasium.farama.org/environments/box2d/lunar_lander/) agent.
+A lunar landing simulation lab
 
-![Lander animation](https://raw.githubusercontent.com/plopd/deep-reinforcement-learning/master/dqn/results/trained_agent.gif)
+![Lander animation](https://gymnasium.farama.org/_images/lunar_lander.gif)
 
 Installation
 ------------
