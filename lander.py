@@ -7,29 +7,32 @@ RIGHT_ENGINE = 3
 
 
 def get_agent_action(percepts):
+    """Agent function
+
+    :param percepts: Percept sequence as a list of values
+    :return: Action to perform
+
+    The most useful sensor values can be unpacked as:
+
+    x, y, x_speed, y_speed, angle = percepts[:5]
+
+    The allowed actions to perform are:
+
+    NOP - Null operation. Fire no engines this turn.
+    LEFT_E
+    """
     x, y, x_speed, y_speed, angle = percepts[:5]
 
     # Fire main engine to keep from crashing
-    if y_speed < -0.1 and -0.5 < angle < 0.5:
+    if y_speed < -0.5:
         return MAIN_ENGINE
-
-    # Generally try to stay level
-    if angle < -0.2:
-        return LEFT_ENGINE
-    if angle > 0.2:
-        return RIGHT_ENGINE
-
-    # Rotate to fire main engine in opposite direction
-    # if we are moving laterally
-    if x_speed < -0.1:
-        return RIGHT_ENGINE
-    if x_speed > 0.1:
-        return LEFT_ENGINE
 
     return NOP
 
 
 def run_graphical():
+    """Run a single graphical simulation"""
+
     with gym.make("LunarLander-v3", render_mode="human") as env:
         total_reward = 0.0
         percepts, info = env.reset()
@@ -48,6 +51,8 @@ def run_graphical():
 
 
 def get_average_reward(num_runs=20):
+    """Computer average reward over num_runs run"""
+
     with gym.make("LunarLander-v3") as env:
         print(f"Calculating average performance over {num_runs} runs")
         avg_reward = 0.0
