@@ -8,7 +8,7 @@ A lunar landing simulation lab
 Learning Objectives
 -------------------
 
-After completing this lab, students will be out to:
+After completing this lab, students will be able to:
 
 - Design a simple agent
 - Examine agent percepts to produce actions
