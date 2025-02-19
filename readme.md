@@ -29,4 +29,4 @@ The agent will run once with visual output followed by a number of runs to compu
 Task
 ----
 
-Improve the `agent` function so that a higher average reward is earned.
+Improve the `agent` function so that a higher average reward is earned. It should be possible to average a reward over 50 with a simple reflex-based agent.
