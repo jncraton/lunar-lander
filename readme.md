@@ -30,3 +30,8 @@ Task
 ----
 
 Improve the `agent` function so that a higher average reward is earned. It should be possible to average a reward over 50 with a simple reflex-based agent.
+
+Resources
+---------
+
+- Documentation for the [Lunar Lander](https://gymnasium.farama.org/environments/box2d/lunar_lander/) environment
