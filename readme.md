@@ -35,3 +35,12 @@ Resources
 ---------
 
 - Documentation for the [Lunar Lander](https://gymnasium.farama.org/environments/box2d/lunar_lander/) environment
+
+Installation issues
+-------------------
+
+If you encounter issues during installation, the following command may be helpful:
+
+```sh
+pip install --upgrade pip wheel setuptools
+```
